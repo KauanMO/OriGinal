@@ -3,8 +3,6 @@
 
 # Ori
 
-<hr>
-
 ## Objetivo
 Informar sobre a história do jogo eletrônico Ori and the blind forest e Ori and the Will of the Wisps, seus personagens, valores sociais e testar o conhecimento do usuário por meio de um quiz.
 
