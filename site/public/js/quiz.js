@@ -59,7 +59,7 @@ const fases = {
     }
 
 }
-var seqPerg = [1, 2, 3, 4], acertos = 0
+var seqPerg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], acertos = 0
 for (let i = seqPerg.length; i;) {
     rand = Math.random() * i-- | 0
     tmp = seqPerg[rand]
@@ -101,6 +101,4 @@ function proximaFase(fase) {
             }
         })
     });
-
-
 }
