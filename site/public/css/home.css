@@ -2,7 +2,7 @@
 @import url('https://fonts.cdnfonts.com/css/inter');
 
 * {
-    font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
 @keyframes floating {
@@ -105,56 +105,60 @@ a {
 }
 
 .active-item {
-    transform: translateX(20rem) !important;
+  transform: translateX(20rem) !important;
 }
 
-.jogos{
-    position: relative;
+.jogos {
+  position: relative;
 }
 
-.blindForest{
-    display: flex;
-    position: absolute;
-    top: 5rem;
-    left: 4rem;
-    align-items: center;
+.blindForest {
+  display: flex;
+  position: absolute;
+  top: 5rem;
+  left: 4rem;
+  align-items: center;
 }
 
-.willWisps{
-    display: flex;
-    position: absolute;
-    top: 25rem;
-    left: 8rem;
-    align-items: center;
+.willWisps {
+  display: flex;
+  position: absolute;
+  top: 25rem;
+  left: 8rem;
+  align-items: center;
 }
 
-#naru-e-ori{
-    width: 40rem;
-    transition: all 500ms ease;
-    transform: translateX(-100vw);
+#naru-e-ori {
+  width: 40rem;
+  transition: all 500ms ease;
+  transform: translateX(-100vw);
 }
 
-.imgCome{
-    transform: unset;
+.imgCome {
+  transform: unset !important;
 }
 
-#ori-e-ku{
-    width: 40rem;
-    transition: all 500ms ease;
-    transform: translateX(-100vw);
+.popin{
+  opacity: 1 !important;
 }
 
-.txtJogo{
-    height: 3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 2.5rem;
-    margin-left: 2.5rem;
-    padding-left: 2rem;
-    border-left: 5px solid white;
-    opacity: 0;
-    transition: opacity 500ms ease;
+#ori-e-ku {
+  width: 40rem;
+  transition: all 500ms ease;
+  transform: translateX(-100vw);
+}
+
+.txtJogo {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 2.5rem;
+  margin-left: 2.5rem;
+  padding-left: 2rem;
+  border-left: 5px solid white;
+  opacity: 0;
+  transition: opacity 500ms ease;
 }

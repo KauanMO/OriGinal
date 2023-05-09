@@ -18,12 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.onscroll = () => {
-    if(window.scrollY > window.innerHeight){
-        nav.classList.add('active')
-        navItens.classList.add('active-item')
-        txtJogo.classList.add('')
-    }else{
-        nav.classList.remove('active')
-        navItens.classList.remove('active-item')
-    }
+  if (window.scrollY > window.innerHeight) {
+    nav.classList.add('active')
+    navItens.classList.add('active-item')
+    document.getElementById('naru-e-ori').classList.add('imgCome')
+    setTimeout(() => {
+      document.getElementById('ori-e-ku').classList.add('imgCome')
+    }, 100);
+    setTimeout(() => {
+      document.querySelectorAll('.txtJogo').forEach(element => {
+        element.classList.add('popin')
+      });
+    }, 500);
+
+  } else {
+    nav.classList.remove('active')
+    navItens.classList.remove('active-item')
+    document.getElementById('naru-e-ori').classList.remove('imgCome')
+    setTimeout(() => {
+      document.getElementById('ori-e-ku').classList.remove('imgCome')
+    }, 100);
+    document.querySelectorAll('.txtJogo').forEach(element => {
+      element.classList.remove('popin')
+    });
+  }
 };

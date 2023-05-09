@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/quiz.css">
     <script src="js/quiz.js"></script>
+    <script src="js/loginCad.js"></script>
 </head>
+
 <body>
+
+    <div class="login">
+        <input placeholder="User" type="text" id="iusernameLog">
+        <input placeholder="*******" type="password" id="isenhaLog">
+        <button onclick="entrar()">Login</button>
+    </div>
+    <div class="cadastrar">
+        <input placeholder="User" type="text" id="iusernameCad">
+        <input placeholder="*******" type="password" id="isenhaCad">
+        <input placeholder="*******" type="password" id="iconfirmSenhaCad">
+        <button onclick="cadastrar()">Cadastrar</button>
+        <span id="alertError"></span>
+    </div>
+
     <button onclick="proximaFase(0)">Começar quiz</button>
     <div class="perguntaQuiz">
         <span id="pergunta"></span>
@@ -18,8 +36,9 @@
             <button class="resposta" id="resposta4"></button>
         </div>
         <div class="div_resultado">
-            
+
         </div>
     </div>
 </body>
+
 </html>
