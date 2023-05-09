@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -63,9 +63,10 @@ function entrar(req, res) {
 function cadastrar(req, res) {
     var user = req.body.userServer;
     var senha = req.body.senhaServer;
+
     if (user == undefined) {
         res.status(400).send("Seu user está undefined!");
-    }else if (senha == undefined) {
+    } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
         usuarioModel.cadastrar(user, senha)
@@ -80,6 +81,9 @@ function cadastrar(req, res) {
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage
                     );
+                        if(erro.sqlMessage == `Duplicate entry '${user}' for key 'usuario.username'`){
+                            res.statusMessage = 'Usuario duplicado'
+                        }
                     res.status(500).json(erro.sqlMessage);
                 }
             );

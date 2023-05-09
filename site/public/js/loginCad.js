@@ -21,17 +21,22 @@ function cadastrar() {
                 senhaServer: senha
             })
         }).then(function(res){
-            console.log('Resposta: ', res)
             if(res.ok){
                 setTimeout(() => {
                     window.location = 'quiz.html'
                 }, 2000);
             }else{
-                throw('Erro')
+                if(res.statusText == 'Usuario duplicado'){
+                    alertError.innerHTML = 'Já existe um usuário com esse username'
+                }else{
+                    throw(res)
+                }
+                
             }
         }).catch(function(res){
             console.log('Erro: ', res)
         })
+
         console.log('cadastrado')
         return false;
     }
