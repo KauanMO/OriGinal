@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/loginCad.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <div class="container">
+        <div id="popUp"><span>Usuario cadastrado</span>
+            <span>Redirecionando...</span></div>
+        <div class="befQuiz">
+            <span>Está preparado?</span>
+            <img id='ori-logo' src="./assets/ori.svg">
+            <div class="cadOuEntrar">
+                <button id='btCadastro'>Cadastre-se</button>
+                <span id='possuiConta'>Já tem uma conta? <span onclick="passarLogin()" id="sEntrar">Entre por aqui</span>!</span>
+            </div>
+        </div>
+    
+        <div class="loginCad">
+            <div class="login">
+                <span>
+                    Usuário:
+                </span>
+                <input placeholder="User" type="text" id="iusernameLog">
+                <span>
+                    Senha:
+                </span>
+                <input placeholder="*******" type="password" id="isenhaLog">
+                <button onclick="entrar()">Login</button>
+                <span id="alertError"></span>
+            </div>
+            <div class="cadastro">
+                <span>
+                    Usuário:
+                </span>
+                <input placeholder="User" type="text" id="iusernameCad">
+                <span>
+                    Senha:
+                </span>
+                <input placeholder="*******" type="password" id="isenhaCad">
+                <span>
+                    Confirme a senha:
+                </span>
+                <input placeholder="*******" type="password" id="iconfirmSenhaCad">
+                <button onclick="cadastrar()">Cadastrar</button>
+                <span id="alertError"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/loginCad.js"></script>

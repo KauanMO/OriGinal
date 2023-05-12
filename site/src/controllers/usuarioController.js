@@ -25,16 +25,16 @@ function listar(req, res) {
 }
 
 function entrar(req, res) {
-    var email = req.body.emailServer;
+    var username = req.body.userServer;
     var senha = req.body.senhaServer;
 
-    if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
+    if (username == undefined) {
+        res.status(400).send("Seu user está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
 
-        usuarioModel.entrar(email, senha)
+        usuarioModel.entrar(username, senha)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -44,7 +44,7 @@ function entrar(req, res) {
                         console.log(resultado);
                         res.json(resultado[0]);
                     } else if (resultado.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
+                        res.status(403).send("User e/ou senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                     }
@@ -81,7 +81,8 @@ function cadastrar(req, res) {
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage
                     );
-                        if(erro.sqlMessage == `Duplicate entry '${user}' for key 'usuario.username'`){
+                        errodoSql = erro.sqlMessage.split(' ')
+                        if(errodoSql[0] == 'Duplicate'){
                             res.statusMessage = 'Usuario duplicado'
                         }
                     res.status(500).json(erro.sqlMessage);
@@ -90,9 +91,9 @@ function cadastrar(req, res) {
     }
 }
 
-module.exports = {
+(module.exports = {
     entrar,
     cadastrar,
     listar,
     testar
-}
+})

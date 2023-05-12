@@ -13,28 +13,6 @@
 
 <body>
     <div class="container">
-        <div class="befQuiz">
-            <span id='preparado'>Está preparado?</span>
-            <img id='ori-logo' src="./assets/ori.svg">
-            <button id='btCadastro'>Cadastre-se</button>
-            <span id='possuiConta'>Já tem uma conta? <span id="sEntrar">Entre por aqui</span>!</span>
-        </div>
-
-        <div class="loginCad">
-            <div class="login">
-                <input placeholder="User" type="text" id="iusernameLog">
-                <input placeholder="*******" type="password" id="isenhaLog">
-                <button onclick="entrar()">Login</button>
-            </div>
-            <div class="cadastro">
-                <input placeholder="User" type="text" id="iusernameCad">
-                <input placeholder="*******" type="password" id="isenhaCad">
-                <input placeholder="*******" type="password" id="iconfirmSenhaCad">
-                <button onclick="cadastrar()">Cadastrar</button>
-                <span id="alertError"></span>
-            </div>
-        </div>
-    
         <div class="quiz">
             <button onclick="proximaFase(0)">Começar quiz</button>
             <span id="pergunta"></span>
@@ -52,5 +30,3 @@
 </body>
 
 </html>
-
-<script src="js/loginCad.js"></script>

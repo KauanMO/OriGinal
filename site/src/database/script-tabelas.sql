@@ -5,11 +5,11 @@ use dbOri;
 create table Usuario (
 	idUsuario int primary key auto_increment,
 	username varchar(45) unique,
-	senha varchar(45)
+	senha varchar(200)
 );
 
 create table Ranking(
-    idRanking int,
+    idRanking int auto_increment,
     tempoJogo varchar(45),
     dataHora datetime default current_timestamp,
     acertos int,

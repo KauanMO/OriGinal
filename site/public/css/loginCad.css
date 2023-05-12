@@ -1,0 +1,197 @@
+@import url("https://fonts.cdnfonts.com/css/inter");
+
+:root{
+    --azul-buttons: #3F7ACC;
+}
+
+*{
+    font-family: "Inter", sans-serif !important;
+}
+
+#popUp{
+    position: absolute;
+    top: 1rem;
+    right: -15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-buttons);
+    border-radius: .5rem;
+    border-left: 5px solid rgb(16, 62, 126);
+    width: 15rem;
+    height: 4rem;
+    transition: all 200ms ease;
+    color: white;
+    font-size: 1.3rem;
+}
+
+#popUp span:nth-child(2){
+    font-size: 1rem;
+}
+
+#alertError{
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.container{
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../assets/quiz-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#ori-logo{
+    width: 360px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.befQuiz{
+    position: relative;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    height: 50vh;
+    width: 25vw;
+    border: 1px solid white;
+    border-radius: 1rem;
+    opacity: 1;
+    transition: 400ms ease;
+}
+
+.befQuiz::before{
+    content: '';
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 1rem;
+    filter: opacity(.1);
+}
+
+.befQuiz > span{
+    position: absolute;
+    top: 4.6rem;
+    font-size: 2rem;
+    font-weight: 550;
+}
+
+.loginCad{
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 50vh;
+    width: 25vw;
+    border: 1px solid white;
+    opacity: 0;
+    transition: 400ms ease;
+    border-radius: 1rem;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.cadastro{
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    opacity: 0;
+    transition: 400ms ease;
+}
+
+.cadastro input{
+    padding: .3rem;
+    font-size: 1.6rem;
+    border-radius: .6rem;
+}
+
+.cadastro button{
+    padding: .3rem;
+    font-size: 1.3rem;
+    color: white;
+    border: none;
+    background-color: var(--azul-buttons);
+    margin-top: 1.6rem;
+}
+
+.cadastro span{
+    font-size: 1.6rem;
+    color: white;
+}
+
+.login{
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    opacity: 0;
+    transition: 400ms ease;
+}
+
+.login input{
+    padding: .3rem;
+    font-size: 1.6rem;
+    border-radius: .6rem;
+}
+
+.login button{
+    padding: .3rem;
+    font-size: 1.3rem;
+    color: white;
+    border: none;
+    background-color: var(--azul-buttons);
+    margin-top: 1.6rem;
+}
+
+.login span{
+    font-size: 1.6rem;
+    color: white;
+}
+
+.cadOuEntrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    position: absolute;
+    bottom: 2.3rem;
+}
+
+#btCadastro{
+    background-color: #3F7ACC;
+    color: white;
+    border-radius: 3px;
+    width: 16rem;
+    height: 2.5rem;
+    padding: .6rem;
+    border: none;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+#possuiConta{
+    bottom: 2rem;
+}
+
+#sEntrar{
+    text-decoration: underline;
+    cursor: pointer;
+}
