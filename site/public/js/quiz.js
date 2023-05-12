@@ -13,7 +13,7 @@ const fases = {
     }
     ,
     respostaCorreta: {
-        1: 'Vale das Corujas',
+        1: 'Vale das Corujas',  
         2: 'Ku',
         3: 'Kuro',
         4: 'Moki',

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav id="nav">
             <ul id="navItens">
                 <a href="#" id="a-home">Home</a>
@@ -28,18 +28,47 @@
     <main>
         <div class="jogos">
             <div class="blindForest">
-                <img src="assets/naru-e-ori.png" id="naru-e-ori">
-                <div class="txtJogo">
-                    <span>Ori and the blind forest</span>
+                <img src="assets/naru-e-ori.png" onclick="scrollBindFores()" id="naru-e-ori">
+                <div class="txtJogo" onclick="scrollBindFores()">
+                    <span style="cursor: pointer;">Ori and the blind forest</span>
                 </div>
             </div>
             <div class="willWisps">
-                <img src="assets/ori-e-ku.png" id="ori-e-ku">
-                <div class="txtJogo">
-                    <span>Ori and the will of the wisps</span>
+                <img src="assets/ori-e-ku.png" onclick="scrollWillWisps()" id="ori-e-ku">
+                <div class="txtJogo" onclick="scrollWillWisps()">
+                    <span style="cursor: pointer;">Ori and the will of the wisps</span>
                 </div>
             </div>
         </div>
+
+        <div class="blindForest-main">
+            <div class="imgTitleBlindForest">
+                <img src="assets/naru-e-ori.png" style="width:50rem;" id="imgBlindForest">
+                <span id="titleBlindForest">Ori and The Blind Forest</span>
+            </div>
+            <div class="historiaBlindForest">
+                <img class="svgBorder svgBorderRight" src="assets/blindForestBorder.svg">
+                <img class="svgBorder svgBorderLeft" src="assets/blindForestBorder1.svg">
+                <div>
+                    <span>
+                        A história começa quando uma terrível tempestade atinge a Floresta de Nibel, lar de Ori e de seu
+                        guardião, Naru. Durante a tempestade, uma árvore ancestral chamada Espírito da Floresta é
+                        destruída,
+                        causando um desequilíbrio na natureza. Ori, o último espírito da floresta, é separado de Naru e
+                        se
+                        encontra sozinho em um mundo hostil e perigoso.
+                    </span>
+                    <br><br><br>
+                    <span>
+                        O objetivo de Ori é restaurar a luz e a vida à Floresta de Nibel. Para isso, ele deve embarcar
+                        em uma jornada épica, enfrentando criaturas sombrias, desvendando enigmas e superando desafios
+                        em seu caminho. Ao longo da jornada, Ori encontra Sein, uma pequena luz que se torna sua guia e
+                        amiga.
+                    </span>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 </body>

@@ -7,38 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/reset.css">
     <script src="js/quiz.js"></script>
-    <script src="js/loginCad.js"></script>
 </head>
 
 <body>
-
-    <div class="login">
-        <input placeholder="User" type="text" id="iusernameLog">
-        <input placeholder="*******" type="password" id="isenhaLog">
-        <button onclick="entrar()">Login</button>
-    </div>
-    <div class="cadastrar">
-        <input placeholder="User" type="text" id="iusernameCad">
-        <input placeholder="*******" type="password" id="isenhaCad">
-        <input placeholder="*******" type="password" id="iconfirmSenhaCad">
-        <button onclick="cadastrar()">Cadastrar</button>
-        <span id="alertError"></span>
-    </div>
-
-    <button onclick="proximaFase(0)">Começar quiz</button>
-    <div class="perguntaQuiz">
-        <span id="pergunta"></span>
-        <div class="respostas">
-            <button class="resposta" id="resposta1"></button>
-            <button class="resposta" id="resposta2"></button>
-            <button class="resposta" id="resposta3"></button>
-            <button class="resposta" id="resposta4"></button>
+    <div class="container">
+        <div class="befQuiz">
+            <span id='preparado'>Está preparado?</span>
+            <img id='ori-logo' src="./assets/ori.svg">
+            <button id='btCadastro'>Cadastre-se</button>
+            <span id='possuiConta'>Já tem uma conta? <span id="sEntrar">Entre por aqui</span>!</span>
         </div>
-        <div class="div_resultado">
 
+        <div class="loginCad">
+            <div class="login">
+                <input placeholder="User" type="text" id="iusernameLog">
+                <input placeholder="*******" type="password" id="isenhaLog">
+                <button onclick="entrar()">Login</button>
+            </div>
+            <div class="cadastro">
+                <input placeholder="User" type="text" id="iusernameCad">
+                <input placeholder="*******" type="password" id="isenhaCad">
+                <input placeholder="*******" type="password" id="iconfirmSenhaCad">
+                <button onclick="cadastrar()">Cadastrar</button>
+                <span id="alertError"></span>
+            </div>
+        </div>
+    
+        <div class="quiz">
+            <button onclick="proximaFase(0)">Começar quiz</button>
+            <span id="pergunta"></span>
+            <div class="respostas">
+                <button class="resposta" id="resposta1"></button>
+                <button class="resposta" id="resposta2"></button>
+                <button class="resposta" id="resposta3"></button>
+                <button class="resposta" id="resposta4"></button>
+            </div>
+            <div class="div_resultado">
+    
+            </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script src="js/loginCad.js"></script>

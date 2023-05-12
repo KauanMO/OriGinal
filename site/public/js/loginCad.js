@@ -42,3 +42,20 @@ function cadastrar() {
     }
 
 }
+
+let btCadastro = document.querySelector("#btCadastro")
+
+btCadastro.addEventListener("click", ()=>{
+    document.querySelector('.befQuiz').style.opacity = '0'
+    setTimeout(() => {
+        document.querySelector('.befQuiz').style.display = 'none'
+        document.querySelector('.loginCad').style.display = 'flex'
+        document.querySelector('.cadastro').style.display = 'flex'
+    }, 450);
+    setTimeout(() => {
+        document.querySelector('.loginCad').style.opacity = '1'
+    }, 500);
+    setTimeout(() => {
+        document.querySelector('.cadastro').style.opacity = '1'
+    }, 500);
+})
