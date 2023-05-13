@@ -15,10 +15,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 200);
     }, 1000);
   }, 1000);
+
+  const obOptions = {
+    threshold: 0.5
+  }
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if(entry.target.classList.contains('imgTitleBlindForest')){
+          entry.target.style.transform = 'translateX(0)';
+        }
+        entry.target.style.opacity = '1';
+      }
+      else{
+        if(entry.target.classList.contains('imgTitleBlindForest')){
+          entry.target.style.transform = 'translateX(-10rem)';
+        }
+        entry.target.style.opacity = '0';
+      }
+    });
+  }, obOptions)
+
+  observer.observe(document.querySelector('.imgTitleBlindForest'))
+  observer.observe(document.querySelector('.svgBorderLeft'))
+  observer.observe(document.querySelector('.svgBorderRight'))
+  observer.observe(document.querySelector('.historiaBlindForest div'))
+
 });
 
 window.onscroll = () => {
-  if (window.scrollY > window.innerHeight) {
+  if (window.scrollY > (window.innerHeight - ((20*window.innerHeight)/100))) {
     nav.classList.add("active");
     navItens.classList.add("active-item");
     document.getElementById("naru-e-ori").classList.add("imgCome");
@@ -44,7 +71,9 @@ window.onscroll = () => {
 };
 
 function scrollBindFores() {
- document.querySelector('.blindForestMain').scrollIntoView({behavior: "smooth"})
+ document.querySelector('.historiaBlindForest').scrollIntoView({behavior: "smooth"})
 }
 
-function scrollWillWisps() {}
+function scrollWillWisps() {
+  document.querySelector('.historiaBlindForest').scrollIntoView({behavior: "smooth"})
+}

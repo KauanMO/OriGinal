@@ -183,6 +183,9 @@ a {
   align-items: center;
   width: 50%;
   padding-top: 5rem;
+  opacity: 1;
+  transform: translateX(-10rem);
+  transition: all 500ms;
 }
 
 #titleBlindForest {
@@ -203,6 +206,8 @@ a {
 .svgBorder {
   position: absolute;
   width: 18rem;
+  opacity: 0;
+  transition: all 500ms;
 }
 
 .svgBorderLeft {
@@ -215,11 +220,14 @@ a {
   top: 2rem;
 }
 
-.historiaBlindForest span {
+.historiaBlindForest p {
   font-size: 1.6rem;
+  margin-top: 1rem;
 }
 
 .historiaBlindForest>div {
   width: 80%;
   margin-top: 5rem;
+  opacity: 0;
+  transition: all 500ms;
 }
