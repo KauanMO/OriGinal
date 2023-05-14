@@ -4,6 +4,7 @@
 :root {
   --background: #121212;
   --azul-claro: #94D0FA;
+  --roxo-claro: #7274E2;
 }
 
 * {
@@ -188,7 +189,7 @@ a {
   transition: all 500ms;
 }
 
-#titleBlindForest {
+.gameHistoryTitle {
   margin-top: 5rem;
   font-size: 48px;
   color: white;
@@ -230,4 +231,12 @@ a {
   margin-top: 5rem;
   opacity: 0;
   transition: all 500ms;
+}
+
+.willWisps-main{
+  position: relative;
+  display: flex;
+  height: 93vh;
+  width: 100%;
+  margin-top: 10rem;
 }
