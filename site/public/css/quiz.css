@@ -18,4 +18,27 @@
 
 .quiz{
     display: flex;
+    align-items: center;
+}
+
+.quiz > button{
+    height: 3rem;
+    width: 6rem;
+    opacity: 1;
+    transition: all 500ms ease;
+}
+
+.respostas{
+    display: none;
+}
+
+.ranking{
+    display: none;
+    color: white;
+    text-align: center;
+    height: 5rem;
+}
+
+.ranking th, .ranking td{
+    padding-right: 1rem;
 }

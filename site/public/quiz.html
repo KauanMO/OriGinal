@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ori Quiz</title>
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="css/reset.css">
     <script src="js/quiz.js"></script>
+    <script src="js/rankingLoad.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="quiz">
-            <button onclick="proximaFase(0)">Começar quiz</button>
+            <button id='btComecarQuiz' onclick="proximaFase(0)">Começar quiz</button>
             <span id="pergunta"></span>
             <div class="respostas">
                 <button class="resposta" id="resposta1"></button>
@@ -23,8 +24,43 @@
                 <button class="resposta" id="resposta4"></button>
             </div>
             <div class="div_resultado">
-    
             </div>
+        </div>
+
+        <div class="ranking">
+            <table>
+                <tr>
+                    <th>User</th>
+                    <th>Acertos</th>
+                    <th>Tempo</th>
+                </tr>
+                <tr id="user1">
+                    <td id="user1User"></td>
+                    <td id="user1Acertos"></td>
+                    <td id="user1Tempo"></td>
+                </tr>
+                <tr id="user2">
+                    <td id="user2User"></td>
+                    <td id="user2Acertos"></td>
+                    <td id="user2Tempo"></td>
+                </tr>
+                <tr id="user3">
+                    <td id="user3User"></td>
+                    <td id="user3Acertos"></td>
+                    <td id="user3Tempo"></td>
+                </tr>
+                <tr id="user4">
+                    <td id="user4User"></td>
+                    <td id="user4Acertos"></td>
+                    <td id="user4Tempo"></td>
+                </tr>
+                <tr id="user5">
+                    <td id="user5User"></td>
+                    <td id="user5Acertos"></td>
+                    <td id="user5Tempo"></td>
+                </tr>
+
+            </table>
         </div>
     </div>
 </body>

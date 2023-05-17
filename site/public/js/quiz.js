@@ -13,7 +13,7 @@ const fases = {
     }
     ,
     respostaCorreta: {
-        1: 'Vale das Corujas',  
+        1: 'Vale das Corujas',
         2: 'Ku',
         3: 'Kuro',
         4: 'Moki',
@@ -57,7 +57,6 @@ const fases = {
         '10b': 'Kuro',
         '10c': 'Naru'
     }
-
 }
 
 var seqPerg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], acertos = 0
@@ -84,7 +83,6 @@ function proximaFase(fase) {
     respostaA3 = document.querySelector('#resposta' + seqRespo[2])
     respostaA4 = document.querySelector('#resposta' + seqRespo[3])
 
-
     pergunta.innerHTML = fases.pergunta[seqPerg[fase]]
     respostaA1.innerHTML = fases.respostaCorreta[seqPerg[fase]]
     respostaA2.innerHTML = fases.respostaErrada[seqPerg[fase] + 'a']
@@ -93,13 +91,22 @@ function proximaFase(fase) {
 
     respostas.forEach(el => {
         el.addEventListener('click', (e) => {
-            if (e.target.innerHTML == fases.respostaCorreta[seqPerg[fase]]){
+            if (e.target.innerHTML == fases.respostaCorreta[seqPerg[fase]]) {
                 acertos++
                 console.log(acertos)
-                proximaFase(fase+1)
-            }else{
+                proximaFase(fase + 1)
+            } else {
                 console.log('incorreto')
             }
         })
     });
 }
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    btComecarQuiz.addEventListener('click', () => {
+        btComecarQuiz.style.opacity = '0'
+        setTimeout(() => {
+            btComecarQuiz.style.display = 'none'
+        }, 600);
+    })
+})
