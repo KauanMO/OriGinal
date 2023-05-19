@@ -93,17 +93,26 @@ document.addEventListener('DOMContentLoaded', () => {
             proximaFase(fase)
             startTimer()
         }, 600);
+
     })
 })
 
+var seqRespo = [1, 2, 3, 4]
+
 function proximaFase(fase) {
-    var seqRespo = [1, 2, 3, 4]
     for (let i = seqRespo.length; i;) {
         rand = Math.random() * i-- | 0
         tmp = seqRespo[rand]
         seqRespo[rand] = seqRespo[i]
         seqRespo[i] = tmp
     }
+
+    document.querySelector('.respostas').innerHTML = `
+    <button class="resposta" id="resposta1"></button>
+    <button class="resposta" id="resposta2"></button>
+    <button class="resposta" id="resposta3"></button>
+    <button class="resposta" id="resposta4"></button>
+    `
 
     respostaA1 = document.querySelector('#resposta' + seqRespo[0])
     respostaA2 = document.querySelector('#resposta' + seqRespo[1])
@@ -125,11 +134,40 @@ function proximaFase(fase) {
 
     respostaA1.addEventListener('click', elRespostaCorreta = () =>{
         acertos++
-        console.log(acertos)
         respostaA1.removeEventListener('click', elRespostaCorreta)
-        proximaFase(fase+1)
+        if(fase+1 != 10){
+            proximaFase(fase+1)
+        }else{
+            finalizarQuiz()
+        }
     })
 
+    respostaA2.addEventListener('click', elRespostaErrada = () =>{
+        respostaA2.removeEventListener('click', elRespostaErrada)
+        if(fase+1 != 10){
+            proximaFase(fase+1)
+        }else{
+            finalizarQuiz()
+        }
+    })
+
+    respostaA3.addEventListener('click', elRespostaErrada1 = () =>{
+        respostaA3.removeEventListener('click', elRespostaErrada1)
+        if(fase+1 != 10){
+            proximaFase(fase+1)
+        }else{
+            finalizarQuiz()
+        }
+    })
+
+    respostaA4.addEventListener('click', elRespostaErrada2 = () =>{
+        respostaA4.removeEventListener('click', elRespostaErrada2)
+        if(fase+1 != 10){
+            proximaFase(fase+1)
+        }else{
+            finalizarQuiz()
+        }
+    })
 }
 
 function startTimer() {
@@ -148,4 +186,39 @@ function startTimer() {
         }
         spanTimer.innerHTML = `${timerMin}:${timerSec}`
     }, 1000);
+}
+
+function finalizarQuiz(){
+    fetch('/ranking/cadastrar', {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            userServer: sessionStorage.idUsuario,
+            tempoJogoServer: spanTimer.innerHTML,
+            acertosServer: acertos
+        })
+    }).then(function(res){
+        if(res.ok){
+            document.querySelector('.quiz').style.opacity = '0'
+
+            setTimeout(() => {
+                document.querySelector('.quiz').style.display = 'none'
+            }, 500);
+        
+            document.querySelector('.container').innerHTML += `
+                <span id='spAcertos'>Você acertou ${acertos} questões!</span>
+            `
+        
+            setTimeout(() => {
+                spAcertos.style.opacity = '1'
+            }, 200);
+        }else{
+            throw(res)
+        }
+    }).catch(function(res){
+        console.log('Erro', res)
+    })
+    return false
 }

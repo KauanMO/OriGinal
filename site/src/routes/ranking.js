@@ -11,4 +11,8 @@ router.get('/listar', (req, res)=>{
     rankingController.listar(req,res)
 })
 
+router.post('/cadastrar', (req, res)=>{
+    rankingController.cadastrar(req,res)
+})
+
 module.exports = router;

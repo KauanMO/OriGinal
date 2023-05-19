@@ -21,7 +21,26 @@ function listar(req,res){
     )
 }
 
+function cadastrar(req,res){
+    var user = req.body.userServer
+    var acertos = req.body.acertosServer
+    var tempoJogo = req.body.tempoJogoServer
+    
+    rankingModel.cadastrar(user, acertos, tempoJogo)
+    .then((resultado)=>{
+        res.json(resultado)
+    }).catch(
+        function (erro){
+            console.log(erro)
+            console.log('Erro ao cadastrar. erro: ', erro.sqlMessage)
+            res.status(500).json(erro.sqlMessage)
+        }
+
+    )
+}
+
 module.exports = {
     testar,
-    listar
+    listar,
+    cadastrar
 }

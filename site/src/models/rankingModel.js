@@ -8,6 +8,13 @@ function listar() {
     return database.executar(instrucao)
 }
 
+function cadastrar(user, acertos, tempoJogo){
+    return database.executar(`
+        INSERT INTO Ranking (tempoJogo, acertos, fkUser) VALUES ('${tempoJogo}', ${acertos}, ${user})
+    `)
+}
+
 module.exports = {
-    listar
+    listar,
+    cadastrar
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/anton');
 
 *{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Anton', sans-serif !important;
 }
 
 #timer{
@@ -9,6 +9,15 @@
     position: absolute;
     left: 0;
     opacity: 0;
+    transition: all 500ms;
+}
+
+#spAcertos{
+    color: white;
+    opacity: 0;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
     transition: all 500ms;
 }
 
@@ -49,6 +58,7 @@
     padding: 1.6rem;
     height: 55vh;
     opacity: 0;
+    transition: all 500ms ease;
 }
 
 .respostas{
