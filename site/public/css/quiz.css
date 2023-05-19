@@ -4,6 +4,18 @@
     font-family: 'Anton', sans-serif;
 }
 
+#timer{
+    color: white;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: all 500ms;
+}
+
+.imgQuiz img{
+    width: 500px;
+}
+
 .container{
     display: flex;
     height: 100vh;
@@ -14,22 +26,43 @@
     background-size: cover;
     overflow: hidden;
     justify-content: center;
-}
-
-.quiz{
-    display: flex;
     align-items: center;
 }
 
-.quiz > button{
+#btComecarQuiz{
+    align-self: center;
     height: 3rem;
     width: 6rem;
     opacity: 1;
     transition: all 500ms ease;
+    position: absolute;
+}
+
+.quiz{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 1.6rem;
+    height: 55vh;
+    opacity: 0;
 }
 
 .respostas{
     display: none;
+    opacity: 0;
+    transition: all 500ms;
+    gap: 1rem;
+}
+
+.respostas button{
+    border: none;
+    border-radius: .3rem;
+    width: 6rem;
+    height: 2rem;
 }
 
 .ranking{
@@ -41,4 +74,9 @@
 
 .ranking th, .ranking td{
     padding-right: 1rem;
+}
+
+#pergunta{
+    color: white;
+    
 }

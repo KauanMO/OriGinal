@@ -1,6 +1,6 @@
 const fases = {
     pergunta: {
-        1: 'Qual é o nome da cidade em ruínas que Ori visita em Ori and the Blind Fores?',
+        1: 'Qual o nome do narrador e mentor de Ori em Ori and the Will of the Wisps?',
         2: 'Qual é o nome do novo personagem jogável introduzido em Ori and the Will of the Wisps?',
         3: 'Qual é o nome do chefe final em Ori and the Blind Forest?',
         4: 'Qual é o nome da raça de criaturas amigáveis que Ori encontra em Ori and the Will of the Wisps?',
@@ -13,7 +13,7 @@ const fases = {
     }
     ,
     respostaCorreta: {
-        1: 'Vale das Corujas',
+        1: 'Kwolok',
         2: 'Ku',
         3: 'Kuro',
         4: 'Moki',
@@ -26,9 +26,9 @@ const fases = {
     }
     ,
     respostaErrada: {
-        '1a': 'Caverna dos Cristais',
-        '1b': 'Toca do Lobo',
-        '1c': 'Cidade das Águias',
+        '1a': 'Gumo',
+        '1b': 'Opher',
+        '1c': 'Tulei',
         '2a': 'Grom',
         '2b': 'Sein',
         '2c': 'Shriek',
@@ -57,9 +57,22 @@ const fases = {
         '10b': 'Kuro',
         '10c': 'Naru'
     }
+    ,
+    imagem: {
+        1: 'kwolok-quiz.png',
+        2: 'ku-quiz.png',
+        3: 'kuro-quiz.jpg',
+        4: 'moki-quiz.png',
+        5: 'niwen-quiz.png',
+        6: 'shriek-quiz.png',
+        7: 'Sein-quiz.jpg',
+        8: 'Bash-quiz.png',
+        9: 'Floresta-de-Nibel.png',
+        10: 'Ori-quiz.png'
+    }
 }
 
-var seqPerg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], acertos = 0
+var seqPerg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], acertos = 0, fase = 0
 for (let i = seqPerg.length; i;) {
     rand = Math.random() * i-- | 0
     tmp = seqPerg[rand]
@@ -67,9 +80,23 @@ for (let i = seqPerg.length; i;) {
     seqPerg[i] = tmp
 }
 
-function proximaFase(fase) {
+document.addEventListener('DOMContentLoaded', () => {
     respostas = document.querySelectorAll('.resposta')
+    btComecarQuiz.addEventListener('click', () => {
+        btComecarQuiz.style.opacity = '0'
+        document.querySelector('.quiz').style.display = 'flex'
+        setTimeout(() => {
+            btComecarQuiz.style.display = 'none'
+            setTimeout(() => {
+                document.querySelector('.quiz').style.opacity = '1'
+            }, 1000);
+            proximaFase(fase)
+            startTimer()
+        }, 600);
+    })
+})
 
+function proximaFase(fase) {
     var seqRespo = [1, 2, 3, 4]
     for (let i = seqRespo.length; i;) {
         rand = Math.random() * i-- | 0
@@ -83,30 +110,42 @@ function proximaFase(fase) {
     respostaA3 = document.querySelector('#resposta' + seqRespo[2])
     respostaA4 = document.querySelector('#resposta' + seqRespo[3])
 
+    document.querySelector('.imgQuiz').innerHTML = `<img src='./assets/${fases.imagem[seqPerg[fase]]}'>`
+
     pergunta.innerHTML = fases.pergunta[seqPerg[fase]]
     respostaA1.innerHTML = fases.respostaCorreta[seqPerg[fase]]
     respostaA2.innerHTML = fases.respostaErrada[seqPerg[fase] + 'a']
     respostaA3.innerHTML = fases.respostaErrada[seqPerg[fase] + 'b']
     respostaA4.innerHTML = fases.respostaErrada[seqPerg[fase] + 'c']
 
-    respostas.forEach(el => {
-        el.addEventListener('click', (e) => {
-            if (e.target.innerHTML == fases.respostaCorreta[seqPerg[fase]]) {
-                acertos++
-                console.log(acertos)
-                proximaFase(fase + 1)
-            } else {
-                console.log('incorreto')
-            }
-        })
-    });
+    document.querySelector('.respostas').style.display = 'flex'
+    setTimeout(() => {
+        document.querySelector('.respostas').style.opacity = '1'
+    }, 500);
+
+    respostaA1.addEventListener('click', elRespostaCorreta = () =>{
+        acertos++
+        console.log(acertos)
+        respostaA1.removeEventListener('click', elRespostaCorreta)
+        proximaFase(fase+1)
+    })
+
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    btComecarQuiz.addEventListener('click', () => {
-        btComecarQuiz.style.opacity = '0'
-        setTimeout(() => {
-            btComecarQuiz.style.display = 'none'
-        }, 600);
-    })
-})
+function startTimer() {
+    spanTimer = document.getElementById('timer')
+    spanTimer.style.opacity = '1'
+
+    timerSec = 0
+    timerMin = 0
+
+    setInterval(() => {
+        if (timerSec < 59) {
+            timerSec++
+        } else {
+            timerMin++
+            timerSec = 0
+        }
+        spanTimer.innerHTML = `${timerMin}:${timerSec}`
+    }, 1000);
+}
