@@ -1,34 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personagens</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/personagens.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <script src="./js/personagens.js"></script>
 </head>
+
 <body>
-    <div class="personagens">
-        <div class="personagem">
-            <img src="assets/Kwolok.png">
-            <span class="nomePersonagem">Kwolok</span>
+    <header id="header">
+        <nav id="nav">
+            <ul id="navItens">
+                <a href="#" id="a-home">Home</a>
+                <a href="personagens.html" id="a-personagens">Personagens</a>
+                <a href="#" id="a-desenvolvedor">Desenvolvedor</a>
+                <a href="loginCad.html" id="a-quiz">Quiz</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="persona_menu">
+            <div class="personagens">
+                <div class="column">
+                    <div class="personagem" id="Ori">
+                        <img src="assets/ori-char.png">
+                        <span class="nomePersonagem">Ori</span>
+                    </div>
+                    <div class="personagem" id="Gumo">
+                        <img src="assets/Gumo.png">
+                        <span class="nomePersonagem">Gumo</span>
+                    </div>
+                    <div class="personagem" id="Kwolok">
+                        <img src="assets/Kwolok.png">
+                        <span class="nomePersonagem">Kwolok</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="personagem" id="Tokk">
+                        <img src="assets/Tokk.png" >
+                        <span class="nomePersonagem">Tokk</span>
+                    </div>
+                    <div class="personagem" id="Lupo">
+                        <img src="assets/Lupo.png">
+                        <span class="nomePersonagem">Lupo</span>
+                    </div>
+                    <div class="personagem" id="Ku">
+                        <img src="assets/ku.png">
+                        <span class="nomePersonagem">Ku</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="personagem" id="Opher">
+                        <img src="assets/Opher.png">
+                        <span class="nomePersonagem">Opher</span>
+                    </div>
+                    <div class="personagem" id="Kuro">
+                        <img src="assets/kuro.png">
+                        <span class="nomePersonagem">Kuro</span>
+                    </div>
+                    <div class="personagem" id="Shriek">
+                        <img src="assets/shriek.png">
+                        <span class="nomePersonagem">Shriek</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="personagem">
-            <img src="assets/Gumo.png">
-            <span class="nomePersonagem">Gumo</span>
-        </div>
-        <div class="personagem">
-            <img src="assets/Tokk.png">
-            <span class="nomePersonagem">Tokk</span>
-        </div>
-        <div class="personagem">
-            <img src="assets/Lupo.png">
-            <span class="nomePersonagem">Lupo</span>
-        </div>
-        <div class="personagem">
-            <img src="assets/Opher.png">
-            <span class="nomePersonagem">Opher</span>
+        <div class="persona_choose">
+            <span id="titulo_choose">Selecione um personagem para saber mais sobre!</span>
+            <span id="desc_choose"></span>
         </div>
     </div>
 </body>
+
 </html>

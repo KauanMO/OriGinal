@@ -90,7 +90,7 @@ nav {
   z-index: 1;
 }
 
-a {
+nav a {
   text-decoration: none;
   color: white;
   opacity: 0;
