@@ -103,14 +103,23 @@ nav a {
     transition: opacity 300ms;
 }
 
+.txt_choose{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    margin-left: 3rem;
+}
+
 #titulo_choose {
-    width: 35rem;
+    width: 100%;
     text-align: left;
     font-size: 3rem;
     color: white;
     position: absolute;
     top: 46%;
-    right: 20%;
 }
 
 .escolhido{
@@ -118,4 +127,11 @@ nav a {
     width: fit-content !important;
     right: 40% !important;
     top: 30% !important;
+}
+
+#desc_choose{
+    color: white;
+    position: absolute;
+    top: 40%;
+    font-size: 1.3rem;
 }
