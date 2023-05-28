@@ -106,10 +106,12 @@ function entrar(){
 
 let btCadastro = document.querySelector("#btCadastro")
 
-btCadastro.addEventListener("click", ()=>{
+btCadastro.addEventListener("click", passarCadastro = ()=>{
     document.querySelector('.befQuiz').style.opacity = '0'
+    document.querySelector('.login').style.opacity = '0'
     setTimeout(() => {
         document.querySelector('.befQuiz').style.display = 'none'
+        document.querySelector('.login').style.display = 'none'
         document.querySelector('.loginCad').style.display = 'flex'
         document.querySelector('.cadastro').style.display = 'flex'
     }, 450);
@@ -120,6 +122,8 @@ btCadastro.addEventListener("click", ()=>{
         document.querySelector('.cadastro').style.opacity = '1'
     }, 500);
 })
+
+document.querySelector('.ri-arrow-left-line').addEventListener('click', passarCadastro)
 
 function passarLogin() {
     document.querySelector('.cadastro').style.opacity = '0'

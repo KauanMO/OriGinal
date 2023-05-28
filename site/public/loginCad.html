@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/loginCad.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
@@ -22,6 +23,7 @@
     
         <div class="loginCad">
             <div class="login">
+                <i style="font-size: 1.3rem;" class="ri-arrow-left-line"></i>
                 <div class="form">
                     <span id="login-title">Login</span>
                     <input placeholder="Usuário" type="text" id="iusernameLog">
@@ -30,6 +32,7 @@
                 <button onclick="entrar()">Login</button>
                 <span id="alertError"></span>
             </div>
+
             <div class="cadastro">
                 <span id="cadastro-title">Cadastro</span>
                 <div class="form">
@@ -38,6 +41,7 @@
                     <input placeholder="Confirmar senha" autocomplete="off" type="password" id="iconfirmSenhaCad">
                 </div>
                 <button onclick="cadastrar()">Cadastrar</button>
+                <span id="sEntrar" onclick="passarLogin()">Fazer login</span>
                 <span id="alertError"></span>
             </div>
         </div>
