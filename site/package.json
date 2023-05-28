@@ -1,5 +1,5 @@
 {
-  "name": "web-data-viz",
+  "name": "OriGinal",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon --exec node app.js"
   },
-  "author": "Feito pelos desenvolvedores @ São Paulo Tech School / Bandtec Digital School",
+  "author": "Kauan Oliveira com uso da API web-data-viz",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
