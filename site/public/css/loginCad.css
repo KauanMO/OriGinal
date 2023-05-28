@@ -8,10 +8,14 @@
     font-family: "Inter", sans-serif !important;
 }
 
+body{
+    overflow: hidden;
+}
+
 #popUp{
     position: absolute;
     top: 1rem;
-    right: -15rem;
+    right: -30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +55,7 @@
 }
 
 #ori-logo{
-    width: 360px;
+    width: 500px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -67,20 +71,8 @@
     flex-direction: column;
     height: 50vh;
     width: 25vw;
-    border: 1px solid white;
-    border-radius: 1rem;
     opacity: 1;
     transition: 400ms ease;
-}
-
-.befQuiz::before{
-    content: '';
-    background-color: white;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: 1rem;
-    filter: opacity(.1);
 }
 
 .befQuiz > span{
@@ -96,12 +88,10 @@
     align-items: center;
     justify-content: center;
     align-self: center;
-    height: 50vh;
-    width: 25vw;
-    border: 1px solid white;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     transition: 400ms ease;
-    border-radius: 1rem;
 }
 
 .login{
@@ -116,26 +106,49 @@
     gap: .5rem;
     opacity: 0;
     transition: 400ms ease;
+    background: white;
+    height: 50%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
 }
 
 .cadastro input{
     padding: .3rem;
     font-size: 1.6rem;
-    border-radius: .6rem;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 50%;
 }
 
 .cadastro button{
-    padding: .3rem;
-    font-size: 1.3rem;
+    padding: .6rem;
+    font-size: 1.6rem;
     color: white;
     border: none;
     background-color: var(--azul-buttons);
     margin-top: 1.6rem;
+    box-shadow: 8px 8px 6px 0px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    width: 14rem;
 }
 
 .cadastro span{
     font-size: 1.6rem;
-    color: white;
+    /* color: white; */
+}
+
+#cadastro-title{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#login-title{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .login{
@@ -144,12 +157,20 @@
     gap: .5rem;
     opacity: 0;
     transition: 400ms ease;
+    background: white;
+    height: 50%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
 }
 
 .login input{
     padding: .3rem;
     font-size: 1.6rem;
-    border-radius: .6rem;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 50%;
 }
 
 .login button{
@@ -159,11 +180,13 @@
     border: none;
     background-color: var(--azul-buttons);
     margin-top: 1.6rem;
+    box-shadow: 8px 8px 6px 0px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    width: 14rem;
 }
 
 .login span{
     font-size: 1.6rem;
-    color: white;
 }
 
 .cadOuEntrar{
@@ -179,12 +202,14 @@
     background-color: #3F7ACC;
     color: white;
     border-radius: 3px;
+    font-size: 1.5rem;
     width: 16rem;
-    height: 2.5rem;
+    height: 3rem;
     padding: .6rem;
     border: none;
     margin-top: 4rem;
     cursor: pointer;
+    box-shadow: 8px 8px 6px 0px rgba(0,0,0,0.1);
 }
 
 #possuiConta{
@@ -194,4 +219,12 @@
 #sEntrar{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    width: 100%;
+    align-items: center;
 }

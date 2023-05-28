@@ -8,8 +8,8 @@ function cadastrar() {
         alertError[1].innerHTML = 'Senhas não coincidem'
     } else if (senha.length < 6) {
         alertError[1].innerHTML = 'Senha muito pequena. Mínimo de 6 caracteres'
-    } else if (iusername.length < 6) {
-        alertError[1].innerHTML = 'Nome de usuário muito pequeno. Mínimo de 6 caracteres'
+    } else if (iusername.length < 4) {
+        alertError[1].innerHTML = 'Nome de usuário muito pequeno. Mínimo de 4 caracteres'
     } else {
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -28,7 +28,7 @@ function cadastrar() {
                 <span>Redirecionando...</span>
                 `
                 setTimeout(() => {
-                    popUp.style.right = '-15rem'
+                    popUp.style.right = '-30rem'
                     passarLogin()
                 }, 2000);
             }else{

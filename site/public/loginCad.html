@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login e cadastro</title>
     <link rel="stylesheet" href="css/loginCad.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
@@ -13,7 +13,6 @@
         <div id="popUp"><span>Usuario cadastrado</span>
             <span>Redirecionando...</span></div>
         <div class="befQuiz">
-            <span>Está preparado?</span>
             <img id='ori-logo' src="./assets/ori.svg">
             <div class="cadOuEntrar">
                 <button id='btCadastro'>Cadastre-se</button>
@@ -23,30 +22,21 @@
     
         <div class="loginCad">
             <div class="login">
-                <span>
-                    Usuário:
-                </span>
-                <input placeholder="User" type="text" id="iusernameLog">
-                <span>
-                    Senha:
-                </span>
-                <input placeholder="*******" type="password" id="isenhaLog">
+                <div class="form">
+                    <span id="login-title">Login</span>
+                    <input placeholder="Usuário" type="text" id="iusernameLog">
+                    <input placeholder="Senha" type="password" id="isenhaLog">
+                </div>
                 <button onclick="entrar()">Login</button>
                 <span id="alertError"></span>
             </div>
             <div class="cadastro">
-                <span>
-                    Usuário:
-                </span>
-                <input placeholder="User" type="text" id="iusernameCad">
-                <span>
-                    Senha:
-                </span>
-                <input placeholder="*******" type="password" id="isenhaCad">
-                <span>
-                    Confirme a senha:
-                </span>
-                <input placeholder="*******" type="password" id="iconfirmSenhaCad">
+                <span id="cadastro-title">Cadastro</span>
+                <div class="form">
+                    <input placeholder="Usuário" autocomplete="off" type="text" id="iusernameCad">
+                    <input placeholder="Senha" autocomplete="off" type="password" id="isenhaCad">
+                    <input placeholder="Confirmar senha" autocomplete="off" type="password" id="iconfirmSenhaCad">
+                </div>
                 <button onclick="cadastrar()">Cadastrar</button>
                 <span id="alertError"></span>
             </div>
