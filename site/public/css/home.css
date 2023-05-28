@@ -233,10 +233,32 @@ nav a {
   transition: all 500ms;
 }
 
-.willWisps-main{
+.willWisps-main {
   position: relative;
   display: flex;
   height: 93vh;
   width: 100%;
   margin-top: 10rem;
+}
+
+.divisor {
+  position: relative;
+  margin-top: 5rem;
+  height: 115vh;
+}
+
+
+
+.divisor img {
+  height: 100%;
+  width: 100%;
+  filter: brightness(50%);
+}
+
+#sp-divisor {
+  position: absolute;
+  color: white;
+  right: 8rem;
+  bottom: 6rem;
+  font-size: 5rem;
 }
