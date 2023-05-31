@@ -57,19 +57,6 @@ const fases = {
         '10b': 'Kuro',
         '10c': 'Naru'
     }
-    ,
-    imagem: {
-        1: 'kwolok-quiz.png',
-        2: 'ku-quiz.png',
-        3: 'kuro-quiz.jpg',
-        4: 'moki-quiz.png',
-        5: 'niwen-quiz.png',
-        6: 'shriek-quiz.png',
-        7: 'Sein-quiz.jpg',
-        8: 'Bash-quiz.png',
-        9: 'Floresta-de-Nibel.png',
-        10: 'Ori-quiz.png'
-    }
 }
 
 var seqPerg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], acertos = 0, fase = 0
@@ -84,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
     respostas = document.querySelectorAll('.resposta')
     btComecarQuiz.addEventListener('click', () => {
         btComecarQuiz.style.opacity = '0'
-        document.querySelector('.quiz').style.display = 'flex'
+        btVoltar.style.opacity = '0'
         setTimeout(() => {
+            document.querySelector('.quiz').classList.add('quizComecou')
             btComecarQuiz.style.display = 'none'
-            setTimeout(() => {
-                document.querySelector('.quiz').style.opacity = '1'
-            }, 1000);
+            btVoltar.style.display = 'none'
+            document.querySelector('#pergunta').style.opacity = '1'
             proximaFase(fase)
             startTimer()
         }, 600);
@@ -118,8 +105,6 @@ function proximaFase(fase) {
     respostaA2 = document.querySelector('#resposta' + seqRespo[1])
     respostaA3 = document.querySelector('#resposta' + seqRespo[2])
     respostaA4 = document.querySelector('#resposta' + seqRespo[3])
-
-    document.querySelector('.imgQuiz').innerHTML = `<img src='./assets/${fases.imagem[seqPerg[fase]]}'>`
 
     pergunta.innerHTML = fases.pergunta[seqPerg[fase]]
     respostaA1.innerHTML = fases.respostaCorreta[seqPerg[fase]]

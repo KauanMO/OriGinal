@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     acertosAtual.innerHTML = res.acertos
                     tempoAtual.innerHTML = res.tempoJogo
 
+                    if(res.username == sessionStorage.usuario){
+                        userAtual.parentElement.classList.add('userNoRanking')
+                    }
+
                     posicao++
                 });
             })
