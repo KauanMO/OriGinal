@@ -1,18 +1,20 @@
 @import url("https://fonts.cdnfonts.com/css/inter");
 
-:root{
-    --azul-buttons: #3F7ACC;
+:root {
+    --azul-buttons: #B2C8FF;
+    --branco-azulado: #E6EDFF;
+    --azul-fundo-form: #202D4E;
 }
 
-*{
+* {
     font-family: "Inter", sans-serif !important;
 }
 
-body{
+body {
     overflow: hidden;
 }
 
-#popUp{
+#popUp {
     position: absolute;
     top: 1rem;
     right: -30rem;
@@ -30,18 +32,18 @@ body{
     font-size: 1.3rem;
 }
 
-#popUp span:nth-child(2){
+#popUp span:nth-child(2) {
     font-size: 1rem;
 }
 
-#alertError{
+#alertError {
     color: red;
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
     text-align: center;
 }
 
-.container{
+.container {
     overflow: hidden;
     display: flex;
     height: 100vh;
@@ -54,11 +56,20 @@ body{
     justify-content: center;
 }
 
-#ori-logo{
+.container::before {
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: absolute;
+    opacity: 0.7;
+}
+
+#ori-logo {
     width: 500px;
 }
 
-.befQuiz{
+.befQuiz {
     position: relative;
     display: flex;
     align-self: center;
@@ -72,14 +83,14 @@ body{
     transition: 400ms ease;
 }
 
-.befQuiz > span{
+.befQuiz>span {
     position: absolute;
     top: 4.6rem;
     font-size: 2rem;
     font-weight: 550;
 }
 
-.loginCad{
+.loginCad {
     position: relative;
     display: none;
     align-items: center;
@@ -91,119 +102,131 @@ body{
     transition: 400ms ease;
 }
 
-.login{
-    display: flex;
-    flex-direction: column;
-    display: none;
+#login-title,
+#cadastro-title {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
-.cadastro{
+.login,
+.cadastro {
     position: relative;
     display: none;
     flex-direction: column;
     gap: .5rem;
     opacity: 0;
     transition: 400ms ease;
-    background: white;
-    height: 50%;
-    width: 30%;
+    background: var(--azul-fundo-form);
+    height: 55%;
+    width: 25%;
     align-items: center;
-    justify-content: center;
     border-radius: 2rem;
-}
-
-#cadastro-title{
-    font-size: 2.6rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-#login-title{
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 2rem;
+    color: white;
 }
 
 .login{
-    position: relative;
-    display: none;
-    flex-direction: column;
-    gap: .5rem;
-    opacity: 0;
-    transition: 400ms ease;
-    background: white;
-    height: 50%;
-    width: 30%;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2rem;
+    height: 45%;
 }
 
-button{
+button {
     padding: .3rem;
     font-size: 1.3rem;
     color: white;
     border: none;
     background-color: var(--azul-buttons);
     margin-top: 1.6rem;
-    box-shadow: 8px 8px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     width: 14rem;
 }
 
-.cadOuEntrar{
+.cadOuEntrar {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: .6rem;
 }
 
-#btCadastro{
-    background-color: var(--azul-buttons);
-    color: white;
+#btCadastro {
+    background-color: var(--branco-azulado);
+    color: black;
     border-radius: 3px;
     font-size: 1.5rem;
-    width: 16rem;
+    width: 22rem;
     height: 3rem;
     padding: .6rem;
     border: none;
-    margin-top: 1.6rem;
+    margin-top: 3rem;
     cursor: pointer;
-    box-shadow: 8px 8px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
-#possuiConta{
+#btVoltar {
+    color: black;
+    width: 22rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+#possuiConta {
     bottom: 2rem;
 }
 
-#sEntrar{
+#sEntrar {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 2.5rem;
     width: 100%;
     align-items: center;
+    margin-top: 3rem;
 }
 
-i{
+i {
     position: absolute;
     top: 8%;
     left: 8%;
 }
 
-input{
+input {
     padding: .3rem;
     font-size: 1.1rem;
     border: none;
     border-bottom: 1px solid gray;
     width: 50%;
     padding-left: 1rem;
+    background: none;
+    color: white;
 }
 
-input:focus{
+input::placeholder {
+    color: white;
+}
+
+input:focus {
     outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cadastro>.buttons, .login>.buttons {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.cadastro>.buttons>button, .login>.buttons>button {
+    color: var(--azul-fundo-form);
+    width: 50%;
+    background-color: var(--branco-azulado);
 }

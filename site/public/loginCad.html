@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,43 +11,55 @@
     <link rel="stylesheet" href="css/loginCad.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
+
 <body>
     <div class="container">
         <div id="popUp"><span>Usuario cadastrado</span>
-            <span>Redirecionando...</span></div>
+            <span>Redirecionando...</span>
+        </div>
         <div class="befQuiz">
             <img id='ori-logo' src="./assets/ori.svg">
             <div class="cadOuEntrar">
-                <button id='btCadastro'>Cadastre-se</button>
-                <span id='possuiConta'>Já tem uma conta? <span onclick="passarLogin()" id="sEntrar">Entre por aqui</span>!</span>
+                <div class="buttons">
+                    <button id='btCadastro'>Comecar</button>
+                    <a href="./index.html"><button id='btVoltar'>Voltar</button></a>
+                </div>
+
+                <!-- <span id='possuiConta'>Já tem uma conta? <span onclick="passarLogin()" id="sEntrar">Entre por aqui</span>!</span> -->
             </div>
         </div>
-    
+
         <div class="loginCad">
             <div class="login">
-                <i style="font-size: 1.3rem;" class="ri-arrow-left-line"></i>
+                <i style="font-size: 1.3rem;" class="ri-arrow-left-line volta-cadastrar"></i>
+                <span id="login-title">Login</span>
                 <div class="form">
-                    <span id="login-title">Login</span>
                     <input placeholder="Usuário" type="text" id="iusernameLog">
                     <input placeholder="Senha" type="password" id="isenhaLog">
                 </div>
-                <button onclick="entrar()">Login</button>
-                <span id="alertError"></span>
+                <div class="buttons">
+                    <button onclick="entrar()">Login</button>
+                    <span id="alertError"></span>
+                </div>
             </div>
 
             <div class="cadastro">
+                <i style="font-size: 1.3rem;" class="ri-arrow-left-line volta-bfQuiz"></i>
                 <span id="cadastro-title">Cadastro</span>
                 <div class="form">
                     <input placeholder="Usuário" autocomplete="off" type="text" id="iusernameCad">
                     <input placeholder="Senha" autocomplete="off" type="password" id="isenhaCad">
                     <input placeholder="Confirmar senha" autocomplete="off" type="password" id="iconfirmSenhaCad">
                 </div>
-                <button onclick="cadastrar()">Cadastrar</button>
-                <span id="sEntrar" onclick="passarLogin()">Fazer login</span>
-                <span id="alertError"></span>
+                <div class="buttons">
+                    <button onclick="cadastrar()">Cadastrar</button>
+                    <span id="sEntrar" onclick="passarLogin()">Já possui cadastro? Faça login</span>
+                    <span id="alertError"></span>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 <script src="js/loginCad.js"></script>

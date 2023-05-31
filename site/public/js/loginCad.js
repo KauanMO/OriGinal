@@ -20,8 +20,8 @@ function cadastrar() {
                 userServer: username,
                 senhaServer: senha
             })
-        }).then(function(res){
-            if(res.ok){
+        }).then(function (res) {
+            if (res.ok) {
                 popUp.style.right = '1rem'
                 popUp.innerHTML = `
                 <span>Usuario cadastrado</span>
@@ -31,15 +31,15 @@ function cadastrar() {
                     popUp.style.right = '-30rem'
                     passarLogin()
                 }, 2000);
-            }else{
-                if(res.statusText == 'Usuario duplicado'){
+            } else {
+                if (res.statusText == 'Usuario duplicado') {
                     alertError.innerHTML = 'Já existe um usuário com esse username'
-                }else{
-                    throw(res)
+                } else {
+                    throw (res)
                 }
-                
+
             }
-        }).catch(function(res){
+        }).catch(function (res) {
             console.log('Erro: ', res)
         })
 
@@ -49,12 +49,12 @@ function cadastrar() {
 
 }
 
-function entrar(){
+function entrar() {
     alertError = document.querySelectorAll('#alertError')
     var iusername = iusernameLog.value
     var username = iusername.toLowerCase()
     var senha = isenhaLog.value
-    if(iusername == '' || senha == ''){
+    if (iusername == '' || senha == '') {
         console.log('Preencha todos os campos')
         alertError[0].innerHTML = 'Preencha todos os campos'
         return false
@@ -69,13 +69,9 @@ function entrar(){
             userServer: username,
             senhaServer: senha
         })
-    }).then((resposta)=>{
-        if(resposta.ok){
-            console.log(resposta)
-            
-            resposta.json().then(json =>{
-                console.log(json)
-                
+    }).then((resposta) => {
+        if (resposta.ok) {
+            resposta.json().then(json => {
                 sessionStorage.usuario = json.username
                 sessionStorage.idUsuario = json.idUsuario
 
@@ -89,13 +85,13 @@ function entrar(){
                     window.location = "quiz.html";
                 }, 1000);
             })
-        }else{
-            console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+        } else {
+            resposta.text().then(texto => {
+                if(texto == 'User e/ou senha inválido(s)'){
+                    console.log('Usuário ou senha incorretos')
+                    alertError[0].innerHTML = 'Usuário ou senha incorretos'
+                }
+            });
         }
     }).catch(function (erro) {
         console.log(erro);
@@ -106,7 +102,7 @@ function entrar(){
 
 let btCadastro = document.querySelector("#btCadastro")
 
-btCadastro.addEventListener("click", passarCadastro = ()=>{
+btCadastro.addEventListener("click", passarCadastro = () => {
     document.querySelector('.befQuiz').style.opacity = '0'
     document.querySelector('.login').style.opacity = '0'
     setTimeout(() => {
@@ -123,7 +119,18 @@ btCadastro.addEventListener("click", passarCadastro = ()=>{
     }, 500);
 })
 
-document.querySelector('.ri-arrow-left-line').addEventListener('click', passarCadastro)
+document.querySelector('.volta-cadastrar').addEventListener('click', passarCadastro)
+
+document.querySelector('.volta-bfQuiz').addEventListener('click', () => {
+    document.querySelector('.cadastro').style.opacity = '0'
+    setTimeout(() => {
+        document.querySelector('.befQuiz').style.display = 'flex'
+        document.querySelector('.loginCad').style.display = 'none'
+        setTimeout(() => {
+            document.querySelector('.befQuiz').style.opacity = '1'
+        }, 50)
+    }, 450);
+})
 
 function passarLogin() {
     document.querySelector('.cadastro').style.opacity = '0'
@@ -139,3 +146,4 @@ function passarLogin() {
         document.querySelector('.login').style.opacity = '1'
     }, 500);
 }
+
