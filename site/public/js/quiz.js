@@ -186,24 +186,22 @@ function finalizarQuiz(){
         })
     }).then(function(res){
         if(res.ok){
-            document.querySelector('.quiz').style.opacity = '0'
-
             setTimeout(() => {
-                document.querySelector('.quiz').style.display = 'none'
-            }, 500);
-        
-            document.querySelector('.container').innerHTML += `
-                <span id='spAcertos'>Você acertou ${acertos} questões!</span>
-            `
-        
-            setTimeout(() => {
-                spAcertos.style.opacity = '1'
-            }, 200);
+                var quizElements = document.querySelector('.quiz').children
+                for(let i = 0; i< quizElements.length; i++){
+                    quizElements[i].style.opacity = '0'
+                }
+                document.querySelector('.quiz').innerHTML += `
+                    <span id='spAcertos'>Você acertou ${acertos} questões!</span>
+                `
+                setTimeout(() => {
+                    spAcertos.style.opacity = '1'
+                }, 200);
+            }, 300);
         }else{
             throw(res)
         }
     }).catch(function(res){
         console.log('Erro', res)
     })
-    return false
 }
