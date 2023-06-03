@@ -198,6 +198,7 @@ function finalizarQuiz(){
                     spAcertos.style.opacity = '1'
                 }, 200);
             }, 300);
+            loadRank()
         }else{
             throw(res)
         }
@@ -205,3 +206,4 @@ function finalizarQuiz(){
         console.log('Erro', res)
     })
 }
+
