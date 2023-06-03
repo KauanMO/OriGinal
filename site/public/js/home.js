@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        if(entry.target.classList.contains('imgTitleBlindForest')){
+        if(entry.target.classList.contains('imgTitleBlindForest') || entry.target.classList.contains('imgWillWisps')){
           entry.target.style.transform = 'translateX(0)';
         }
         entry.target.style.opacity = '1';
@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
       else{
         if(entry.target.classList.contains('imgTitleBlindForest')){
           entry.target.style.transform = 'translateX(-10rem)';
+        }else if(entry.target.classList.contains('imgWillWisps')){
+          entry.target.style.transform = 'translateX(10rem)';
         }
         entry.target.style.opacity = '0';
       }
@@ -41,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector('.svgBorderLeft'))
   observer.observe(document.querySelector('.svgBorderRight'))
   observer.observe(document.querySelector('.historiaBlindForest div'))
+
+  observer.observe(document.querySelector('.imgWillWisps'))
+  observer.observe(document.querySelector('.svgBorderLeftW'))
+  observer.observe(document.querySelector('.svgBorderRightW'))
+  observer.observe(document.querySelector('.historiaWillWisps div'))
 
 });
 
@@ -75,5 +82,5 @@ function scrollBindFores() {
 }
 
 function scrollWillWisps() {
-  document.querySelector('.historiaBlindForest').scrollIntoView({behavior: "smooth"})
+  document.querySelector('.historiaWillWisps').scrollIntoView({behavior: "smooth"})
 }

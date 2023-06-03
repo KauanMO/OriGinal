@@ -9,8 +9,9 @@
     <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="css/reset.css">
-    <script src="js/quiz.js"></script>
-    <script src="js/rankingLoad.js"></script>
+    <script src="js/quiz.js" defer></script>
+    <script src="js/chartsLoad.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 
 <body>
@@ -69,6 +70,10 @@
                 </table>
             </div>
             <div class="divisao"></div>
+            <div>
+                <canvas id="acertosChart"></canvas>
+                <span id="btSair">Sair</span>
+            </div>
         </div>
     </div>
 </body>

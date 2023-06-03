@@ -204,6 +204,15 @@ nav a {
   background-color: var(--azul-claro);
 }
 
+.historiaWillWisps{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  background-color: #4978F1;
+}
+
 .svgBorder {
   position: absolute;
   width: 18rem;
@@ -211,12 +220,12 @@ nav a {
   transition: all 500ms;
 }
 
-.svgBorderLeft {
+.svgBorderLeft, .svgBorderLeftW {
   bottom: 2rem;
   left: 2rem;
 }
 
-.svgBorderRight {
+.svgBorderRight, .svgBorderRightW {
   right: 2rem;
   top: 2rem;
 }
@@ -227,6 +236,18 @@ nav a {
 }
 
 .historiaBlindForest>div {
+  width: 80%;
+  margin-top: 5rem;
+  opacity: 0;
+  transition: all 500ms;
+}
+
+.historiaWillWisps p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.historiaWillWisps>div {
   width: 80%;
   margin-top: 5rem;
   opacity: 0;
@@ -247,8 +268,6 @@ nav a {
   height: 115vh;
 }
 
-
-
 .divisor img {
   height: 100%;
   width: 100%;
@@ -261,4 +280,24 @@ nav a {
   right: 8rem;
   bottom: 6rem;
   font-size: 5rem;
+}
+
+.willWisps-main>.imgWillWisps {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  opacity: 1;
+  transform: translateX(10rem);
+  transition: all 500ms;
+}
+
+.willWisps-main>.imgWillWisps>img {
+  width: 50rem;
+  border-radius: 1rem;
+}
+
+.desenvolvedor{
+  height: 80vh;
 }

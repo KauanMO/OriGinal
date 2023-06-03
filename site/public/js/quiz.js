@@ -69,9 +69,13 @@ for (let i = seqPerg.length; i;) {
 
 document.addEventListener('DOMContentLoaded', () => {
     respostas = document.querySelectorAll('.resposta')
-    btComecarQuiz.addEventListener('click', () => {
+    btComecarQuiz.addEventListener('click', comecarErecomecar = () => {
         btComecarQuiz.style.opacity = '0'
         btVoltar.style.opacity = '0'
+        if(typeof spAcertos == "object"){
+            spAcertos.style.opacity = '0'
+            document.getElementById('dtRecomecarQuiz').style.opacity = '0'
+        }
         setTimeout(() => {
             document.querySelector('.quiz').classList.add('quizComecou')
             btComecarQuiz.style.display = 'none'
@@ -80,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
             proximaFase(fase)
             startTimer()
         }, 600);
-
     })
 })
 
@@ -193,12 +196,14 @@ function finalizarQuiz(){
                 }
                 document.querySelector('.quiz').innerHTML += `
                     <span id='spAcertos'>Você acertou ${acertos} questões!</span>
+                    <button id='dtRecomecarQuiz'>Tentar novamente</button>
                 `
                 setTimeout(() => {
                     spAcertos.style.opacity = '1'
+                    document.getElementById('dtRecomecarQuiz').addEventListener('click', comecarErecomecar)
                 }, 200);
             }, 300);
-            loadRank()
+            loadCharts()
         }else{
             throw(res)
         }
@@ -207,3 +212,7 @@ function finalizarQuiz(){
     })
 }
 
+btSair.addEventListener('click', ()=>{
+    sessionStorage.clear()
+    window.location = 'index.html'
+})
