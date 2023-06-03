@@ -204,7 +204,7 @@ nav a {
   background-color: var(--azul-claro);
 }
 
-.historiaWillWisps{
+.historiaWillWisps {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,12 +220,14 @@ nav a {
   transition: all 500ms;
 }
 
-.svgBorderLeft, .svgBorderLeftW {
+.svgBorderLeft,
+.svgBorderLeftW {
   bottom: 2rem;
   left: 2rem;
 }
 
-.svgBorderRight, .svgBorderRightW {
+.svgBorderRight,
+.svgBorderRightW {
   right: 2rem;
   top: 2rem;
 }
@@ -298,6 +300,95 @@ nav a {
   border-radius: 1rem;
 }
 
-.desenvolvedor{
-  height: 80vh;
+.desenvolvedor {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  height: 55vh;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.desenvolvedor>.card {
+  padding-top: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 1rem;
+  height: 30rem;
+}
+
+.desenvolvedor>.card>span {
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.desenvolvedor>.card>img {
+  width: 300px;
+  border: 1px solid var(--azul-claro);
+  border-radius: 20rem;
+}
+
+.desenvolvedor>.card>.icons>a>.github-ico,
+.desenvolvedor>.card>.icons>a>.insta-ico {
+  color: white;
+  font-size: 2rem;
+  transition: 100ms;
+}
+
+.desenvolvedor>.card>.icons>a>.github-ico:hover,
+.desenvolvedor>.card>.icons>a>.insta-ico:hover {
+  color: var(--roxo-claro);
+  transition: 100ms;
+}
+
+.desenvolvedor a {
+  text-decoration: none;
+}
+
+.conclusao{
+  margin-top: 1rem;
+}
+
+.conclusao>span {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.devTitle {
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer{
+  margin-top: 2rem;
+  height: 40vh;
+  background-color: #3C4868;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 30rem;
+}
+
+footer>img{
+  width: 200px;
+  margin-left: 2rem;
+}
+
+.navOp{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navOp a{
+  text-decoration: none;
+  color: black;
 }
